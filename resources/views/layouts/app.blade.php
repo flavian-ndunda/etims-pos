@@ -69,6 +69,12 @@
                        class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}">
                         📦 Products
                     </a>
+                    @if(auth()->user()->isAdmin())
+<a href="{{ route('users.index') }}"
+   class="nav-link {{ request()->routeIs('users.*') ? 'active text-purple-600 bg-purple-50' : '' }}">
+    👥 Users
+</a>
+@endif
                 </div>
             </div>
 
